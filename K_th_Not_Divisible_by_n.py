@@ -33,7 +33,7 @@ def print_list(arr):
     sys.stdout.write(" ".join(map(str, arr)) + '\n')
 
 
-
+# https://codeforces.com/group/isP4JMZTix/contest/379072/problem/G
 
 
 def solve():
