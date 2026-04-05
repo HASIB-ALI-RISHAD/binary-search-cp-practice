@@ -36,11 +36,35 @@ def fast_print(ans):
 def print_list(arr):
     sys.stdout.write(" ".join(map(str, arr)) + '\n')
 
+
+# https://codeforces.com/problemset/problem/750/A
+
 def solve():
-    # n = get_int()
-    # a , b = get_ints()
-    # arr = get_list()
-    pass
+    n , k = get_ints()
+
+    l = 0
+    r = n
+    ans = 0
+
+    def predicate(mid):
+
+        check = 0
+        for i in range(1,mid+1):
+            check += i * 5
+        return check + k <= 240 
+        
+    while l<=r:
+
+        mid = l + (r-l)//2
+
+        if predicate(mid):
+            ans = mid
+            l = mid + 1
+        else:
+            r = mid - 1
+    fast_print(ans)
+        
+
 
 if __name__ == '__main__':
     # multiple test cases
